@@ -27,24 +27,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     //####################################################
     // MARK: - Life Cycle
     //####################################################
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
         stopButton.hidden = true
         recordButton.enabled = true
-        
         recordingInProgress.hidden = false
         recordingInProgress.text =  "Tap to Record"
     }
     
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     //####################################################
     // MARK: - IBActions

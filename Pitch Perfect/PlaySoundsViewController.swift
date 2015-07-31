@@ -32,10 +32,6 @@ class PlaySoundsViewController: UIViewController {
         audioFile = AVAudioFile(forReading: receivedAudio.filePathUrl, error: nil)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     //####################################################
     // MARK: - IBActions
@@ -62,10 +58,7 @@ class PlaySoundsViewController: UIViewController {
     
     // Stop Button Tapped
     @IBAction func stopAudio(sender: UIButton) {
-        audioPlayer.stop()
-        
-        audioEngine.stop()
-        audioEngine.reset()
+        readyForPlayNew()
     }
     
     //####################################################
@@ -73,21 +66,23 @@ class PlaySoundsViewController: UIViewController {
     //####################################################
     // Play with rate
     func playAudio(rate: Float) {
-        audioPlayer.stop()
-        
-        audioEngine.stop()
-        audioEngine.reset()
+        readyForPlayNew()
         
         audioPlayer.rate = rate
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
     }
     
-    // Play with Pitch
-    func playAudioWithVariablePitch(pitch: Float) {
+    // Stop and Reset current play
+    func readyForPlayNew(){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    // Play with Pitch
+    func playAudioWithVariablePitch(pitch: Float) {
+        readyForPlayNew()
         
         var audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
