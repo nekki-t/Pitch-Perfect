@@ -105,7 +105,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             
             
             //Step 2 - Move to the next scene aka perform segue
-            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+            performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         } else {
             recordButton.enabled = true
             stopButton.hidden = true
