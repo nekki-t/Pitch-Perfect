@@ -32,8 +32,17 @@
                                 <color key="textColor" red="0.10196078431372549" green="0.2196078431372549" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GcB-Hb-8C7">
+                                <rect key="frame" x="275" y="414" width="50" height="50"/>
+                                <state key="normal" image="pausebutton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pauseRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dyv-IH-MxM"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0JN-Wr-tQk">
-                                <rect key="frame" x="277" y="523" width="50" height="50"/>
+                                <rect key="frame" x="275" y="523" width="50" height="50"/>
                                 <state key="normal" image="stopbutton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,15 +54,30 @@
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Qcy-IM-hML" firstAttribute="top" secondItem="CGT-On-za6" secondAttribute="bottom" constant="27" id="0Sm-ng-Iyj"/>
+                            <constraint firstAttribute="centerY" secondItem="GcB-Hb-8C7" secondAttribute="centerY" constant="-134" id="1qM-di-JhZ"/>
+                            <constraint firstAttribute="centerX" secondItem="0JN-Wr-tQk" secondAttribute="centerX" id="GuC-eG-dBi"/>
+                            <constraint firstItem="GcB-Hb-8C7" firstAttribute="top" secondItem="Qcy-IM-hML" secondAttribute="bottom" constant="15" id="KZo-iV-lyg"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="0JN-Wr-tQk" secondAttribute="bottom" constant="27" id="OM6-92-BIG"/>
+                            <constraint firstItem="GcB-Hb-8C7" firstAttribute="top" secondItem="Qcy-IM-hML" secondAttribute="bottom" constant="20" id="WTP-ap-Vue"/>
                             <constraint firstAttribute="centerX" secondItem="CGT-On-za6" secondAttribute="centerX" id="Xqj-eF-F0e"/>
                             <constraint firstAttribute="centerX" secondItem="Qcy-IM-hML" secondAttribute="centerX" id="evx-GT-a5R"/>
                             <constraint firstAttribute="centerX" secondItem="0JN-Wr-tQk" secondAttribute="centerX" constant="-2" id="i5c-du-faY"/>
+                            <constraint firstAttribute="centerX" secondItem="GcB-Hb-8C7" secondAttribute="centerX" id="l76-1S-CwR"/>
+                            <constraint firstAttribute="centerX" secondItem="0JN-Wr-tQk" secondAttribute="centerX" constant="-2" id="udT-Sg-Uyo"/>
                             <constraint firstAttribute="centerY" secondItem="CGT-On-za6" secondAttribute="centerY" id="v9q-E4-p5k"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1qM-di-JhZ"/>
+                                <exclude reference="KZo-iV-lyg"/>
+                                <exclude reference="i5c-du-faY"/>
+                                <exclude reference="udT-Sg-Uyo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Record" id="bKp-av-Qfx"/>
                     <connections>
+                        <outlet property="pauseButton" destination="GcB-Hb-8C7" id="56L-qS-wKy"/>
                         <outlet property="recordButton" destination="CGT-On-za6" id="nlT-4s-RJG"/>
                         <outlet property="recordingInProgress" destination="Qcy-IM-hML" id="bv1-IM-meD"/>
                         <outlet property="stopButton" destination="0JN-Wr-tQk" id="tdZ-2c-kCh"/>
@@ -123,7 +147,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCf-uV-24W">
                                 <rect key="frame" x="444" y="386" width="100" height="100"/>
-                                <state key="normal" image="reversebutton">
+                                <state key="normal" image="reverbbutton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -187,8 +211,9 @@
         <image name="darthvadarbutton" width="100" height="100"/>
         <image name="echobutton" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
+        <image name="pausebutton" width="50" height="50"/>
         <image name="rabitbutton" width="100" height="100"/>
-        <image name="reversebutton" width="100" height="100"/>
+        <image name="reverbbutton" width="100" height="100"/>
         <image name="snailbutton" width="100" height="100"/>
         <image name="stopbutton" width="50" height="50"/>
     </resources>
